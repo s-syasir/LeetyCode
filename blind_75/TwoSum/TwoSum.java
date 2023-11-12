@@ -1,13 +1,10 @@
-import java.util.HashMap;
-import java.util.Map;
+// Maybe? Import the Solution.java (not needed because my compiler is nice?)
 
-public class TwoSum {
+// This file is the equivalent of "main" in Python. This
+// TODO: Change the name of the class to the name of the folder/problem.
+// TODO: Call on the solution class and methods and test varied inputs to see if it works.
+public class template_main {
     public static void main(String[] args){
-        Solution runTwoSum = new Solution();
-        int[] testInput = {1,3,2,0};
-        int[] solution = runTwoSum.twoSum(testInput, 2);
-        System.out.println("Indexes of solution are: " + solution[0] + " and " + solution[1]);
+        System.out.println("Hello World!");
     }
-    // Static is placed in data section (neither Heap nor Stack)
-    // Static means that the method can be run by the
 }
