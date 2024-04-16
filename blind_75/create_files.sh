@@ -21,14 +21,14 @@ do
      cp ./template_main.java ./$name/$name.java
      cp ./template_solution.java ./$name/Solution.java
      # Create C++ file
-     cp ./template.cpp ./$name/$name.cpp
+     #cp ./template.cpp ./$name/$name.cpp
      # Create C file
-     cp ./template.c ./$name/$name.c
+     #cp ./template.c ./$name/$name.c
      # Create Go file
-     cp ./template.go ./$name/$name.go
+     #cp ./template.go ./$name/$name.go
      # Create Rust file
-     cp ./template.rs ./$name/$name.rs
+     #cp ./template.rs ./$name/$name.rs
      # Create Typescript
-     cp ./template.ts ./$name/$name.ts
+     #cp ./template.ts ./$name/$name.ts
    fi
 done

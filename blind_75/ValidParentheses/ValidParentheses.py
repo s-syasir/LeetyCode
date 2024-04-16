@@ -7,8 +7,9 @@
 def main():
     print("Hello World!")
     solution_obj = Solution
-    retVal = solution_obj.something(solution_obj)
-    print(retVal)
+    input = "{{{(((({{}}))))}}}{{}}[[[]]]()"
+    output = solution_obj.validParantheses(input)
+    print(output)
 
 
 # TODO: change the name of the defined method "something" to the problem name
@@ -17,8 +18,32 @@ def main():
 
 # Solution class. Copy over the information from Leetcode.
 class Solution:
-    def something(self):
-        return [-1, -1]
+    def validParantheses(input):
+        # Logic: Go through the entire string. Store all opener
+        # parantheses into a stack. If you encounter a closer, check
+        # if that closer corresponds to the top of the stack's opener
+        # I.e: ) closes (, } closes {, ] closes [.
+        validChars = ["(", ")", "[", "]", "{", "}"]
+        openersStack = []
+        retVal = True
+        for char in input:
+            if char == validChars[0] or char == validChars[2] or char == validChars[4]:
+                openersStack.append(char)
+            if char == validChars[1] or char == validChars[3] or char == validChars[5]:
+                if len(openersStack)  > 0:
+                    previousOpener = openersStack.pop()
+                    indexOfOpener = validChars.index(previousOpener)
+                    indexOfCloser = validChars.index(char)
+                    indDiff = indexOfCloser - indexOfOpener
+                    if indDiff != 1:
+                        retVal = False
+                        return retVal
+                else:
+                    retVal = False
+                    return retVal
+
+        retVal = len(openersStack) == 0
+        return retVal
 
 
 # If this is the file that is running "__name__ == __main__",

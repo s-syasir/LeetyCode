@@ -7,8 +7,10 @@
 def main():
     print("Hello World!")
     solution_obj = Solution
-    retVal = solution_obj.something(solution_obj)
-    print(retVal)
+    # input = "A man, a plan, a canal: Panama"
+    input = "0P"
+    output = solution_obj.isPalindrome(input)
+    print(output)
 
 
 # TODO: change the name of the defined method "something" to the problem name
@@ -17,8 +19,26 @@ def main():
 
 # Solution class. Copy over the information from Leetcode.
 class Solution:
-    def something(self):
-        return [-1, -1]
+    def isPalindrome(input):
+        validChars = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o', 'p', 'q', 'r', 's', 't','u','v','w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+        input = input.lower()
+        print(input)
+        palCheck = ""
+
+        for char in input:
+            if validChars.__contains__(char):
+                palCheck += char
+
+        if len(palCheck) == 1:
+            return False
+
+        halfLength = (int) (len(palCheck) / 2)
+        j = len(palCheck) - 1
+        for i in range (0, halfLength):
+            if (palCheck[i] != palCheck[j]):
+                return False
+            j-= 1
+        return True
 
 
 # If this is the file that is running "__name__ == __main__",

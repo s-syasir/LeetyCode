@@ -7,8 +7,10 @@
 def main():
     print("Hello World!")
     solution_obj = Solution
-    retVal = solution_obj.something(solution_obj)
-    print(retVal)
+    input1 = "anagram"
+    input2 = "nagaram"
+    output = solution_obj.isAnagram(input1,input2)
+    print(output)
 
 
 # TODO: change the name of the defined method "something" to the problem name
@@ -17,8 +19,28 @@ def main():
 
 # Solution class. Copy over the information from Leetcode.
 class Solution:
-    def something(self):
-        return [-1, -1]
+    def isAnagram(input1, input2):
+        if (len(input1) != len(input2)):
+            return False
+        letterMap = {}
+        for char in input1:
+            count = 0
+            if (letterMap.get(char) == None):
+                letterMap[char] = 1
+            else:
+                letterMap[char] = letterMap[char] + 1
+
+        for char in input2:
+            if (letterMap.get(char) == None):
+                return False
+            else:
+                if (letterMap[char] != 0):
+                    letterMap[char] = letterMap[char] - 1
+                    if (letterMap[char] == 0):
+                        letterMap.pop(char)
+                else:
+                    return False
+        return (len(letterMap) == 0)
 
 
 # If this is the file that is running "__name__ == __main__",
