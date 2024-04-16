@@ -1,0 +1,7 @@
+Resources Used:
+  https://unix.stackexchange.com/questions/202243/how-to-check-directory-is-empty
+   https://superuser.com/questions/145372/find-command-in-linux-to-locate-pdf-files
+     VERY cool command: find . -type f -iname '*.pdf' | xargs rm (find and remove all pdfs recurisvely holy shit)
+  https://unix.stackexchange.com/questions/171677/cd-into-all-directories-execute-command-on-files-in-that-directory-and-return
+
+
