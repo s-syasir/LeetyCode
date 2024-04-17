@@ -13,5 +13,3 @@ public class template_main {
         solution_obj.something(null, 0)
     }
 }
-
-// Problem description:

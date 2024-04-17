@@ -13,11 +13,12 @@ def main():
     print(output)
 
 
-# TODO: change the name of the defined method "something" to the problem name
-# TODO: Write out the solution for the problem, writing out the class and method
-# TODO: ensure the return value and parameters match the problem
-
-# Solution class. Copy over the information from Leetcode.
+# Logic: you store all letters and their quantity in word1 to a map of: (char, int)
+# Where char = letter, int = quantity. Once there, then go over input2,
+# if there's ever a letter that occurs that goes above the quantity in the map
+# (You've encountered 3 As so far and there's another but there's only 3 in the map)
+# Or if you encounter a letter that doesn't exist in the map at all, then break out early
+# and return false. Simple.
 class Solution:
     def isAnagram(input1, input2):
         if (len(input1) != len(input2)):
@@ -47,3 +48,29 @@ class Solution:
 # run the main() function
 if __name__ == "__main__":
     main()
+
+# Problem description:
+# Given two strings s and t, return true if t is an anagram of s, and false otherwise.
+
+# An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
+
+
+
+# Example 1:
+
+# Input: s = "anagram", t = "nagaram"
+# Output: true
+# Example 2:
+
+# Input: s = "rat", t = "car"
+# Output: false
+
+
+# Constraints:
+
+# 1 <= s.length, t.length <= 5 * 104
+# s and t consist of lowercase English letters.
+
+
+# Follow up: What if the inputs contain Unicode characters? How would you adapt your solution to such a case?
+
